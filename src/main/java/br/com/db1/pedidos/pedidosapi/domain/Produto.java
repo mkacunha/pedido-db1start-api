@@ -31,6 +31,8 @@ public class Produto {
 	@Enumerated(EnumType.STRING)
 	@Column(name = "status", length = 30, nullable = false)
 	private ProdutoStatus status;
+	
+	protected Produto() {}
 
 	public Produto(String codigo, String nome, Double valor) {
 		Verificador.naoNulo(codigo, "código do produto");
@@ -44,7 +46,7 @@ public class Produto {
 	}
 
 	public void inativar() {
-		if (ProdutoStatus.ATIVO.equals(this.status)) {
+		if (!ProdutoStatus.ATIVO.equals(this.status)) {
 			throw new RuntimeException("Produto est� " + this.status);
 		}
 		this.status = ProdutoStatus.INATIVO;
