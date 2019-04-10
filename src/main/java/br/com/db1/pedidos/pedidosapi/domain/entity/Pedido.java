@@ -52,12 +52,12 @@ public class Pedido {
 	private List<PedidoItem> itens = new ArrayList<>();
 
 	public Pedido(String codigo, Cliente cliente) {
-		Verificador.naoNulo(codigo, "c�digo");
+		Verificador.naoNulo(codigo, "código");
 		Verificador.naoNulo(cliente, "cliente");
-		this.verificarClienteAtivo();
-
 		this.codigo = codigo;
 		this.cliente = cliente;
+		this.status = PedidoStatus.ABERTO;		
+		this.verificarClienteAtivo();
 		this.novoHistoricoStatus();
 	}
 
