@@ -71,4 +71,8 @@ public class Cliente {
 	public boolean isAtivo() {
 		return ClienteStatus.ATIVO.equals(this.status);
 	}
+
+	public void marcarComoExcluido() {		
+		this.status = ClienteStatus.EXCLUIDO;		
+	}
 }

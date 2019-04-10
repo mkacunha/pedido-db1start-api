@@ -50,4 +50,10 @@ public class ClienteService {
 			throw new RuntimeException("CPF Duplicado");
 		}
 	}
+
+	public void delete(Long id) {
+		Cliente clienteDatabase = clienteRepository.getOne(id);
+		clienteDatabase.marcarComoExcluido();
+		clienteRepository.save(clienteDatabase);
+	}
 }
