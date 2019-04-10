@@ -23,6 +23,7 @@ public class ProdutoServiceTest {
 
     @MockBean
     private ProdutoRepository produtoRepository;
+    
     @Autowired
     private ProdutoService produtoService;
     

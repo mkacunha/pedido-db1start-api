@@ -11,13 +11,41 @@ public class ProdutoDTO implements Serializable {
     private String nome;
     private Double valor;
 
-    public ProdutoDTO(String codigo, String nome, Double valor) {
+    public ProdutoDTO() {
+		super();
+	}
+
+	public ProdutoDTO(String codigo, String nome, Double valor) {
         this.codigo = codigo;
         this.nome = nome;
         this.valor = valor;
     }
+    
+    public String getCodigo() {
+		return codigo;
+	}
 
-    @Override
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Double getValor() {
+		return valor;
+	}
+
+	public void setValor(Double valor) {
+		this.valor = valor;
+	}
+
+	@Override
     public int hashCode() {
         return Objects.hash(codigo, nome, valor);
     }
